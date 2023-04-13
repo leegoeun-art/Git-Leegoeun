@@ -1,1 +1,29 @@
+def integer
+if integer[a]=='1':
+  strn+='일 '
+elif integer[a]=='2':
+  strn+='이 '
+elif integer[a]=='3':
+  strn+='삼 '
+elif integer[a]=='4':
+  strn+='사 '
+elif integer[a]=='5':
+  strn+='오 '
+elif integer[a]=='6':
+  strn+='육 '
+elif integer[a]=='7':
+  strn+='칠 '
+elif integer[a]=='8':
+  strn+='팔 '
+elif integer[a]=='9':
+  strn+='구 '
+elif integer[a]=='0':
+  strn+='공 '
+return strn
 
+integer=input("3자리 정수를 입력")
+strnf=""
+strnf+=goeun(0,integer)
+strnf+=goeun(1,integer)
+strnf+=goeun(2,integer)
+print(strnf)
