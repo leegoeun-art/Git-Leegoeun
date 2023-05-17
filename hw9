@@ -1,0 +1,39 @@
+# Git-Leegoeun
+# Point 클래스 정의
+class Point:
+    def __init__(self, x=0, y=0):
+        self.x = x
+        self.y = y
+
+    def __str__(self):
+        return "({0}, {1})".format(self.x, self.y)
+
+
+# Rectangle 클래스 정의
+class Rectangle:
+    def __init__(self, x1=0, y1=0, x2=0, y2=0):
+        self.lt = Point(x1, y1)  # 좌측 상단 꼭짓점
+        self.rb = Point(x2, y2)  # 우측 하단 꼭짓점
+
+    def show(self):
+        print("좌측 상단 꼭지점이 {0}이고 우측 하단 꼭지점이 {1}인 사각형입니다.".format(self.lt, self.rb))
+
+    def getWidth(self):
+        return abs(self.rb.x - self.lt.x)
+
+    def getHeight(self):
+        return abs(self.rb.y - self.lt.y)
+
+    def getArea(self):
+        return self.getWidth() * self.getHeight()
+
+    def getPerimeter(self):
+        return 2 * (self.getWidth() + self.getHeight())
+
+
+# 주 프로그램부
+r1 = Rectangle(5, 5, 20, 10)
+a = r1.getArea()
+p = r1.getPerimeter()
+r1.show()
+print(f'\n넓이는 {a}, 둘레는 {p}')
